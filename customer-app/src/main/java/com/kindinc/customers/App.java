@@ -19,7 +19,7 @@ public class App extends Application<Configuration> {
 	@Override
 	public void run (Configuration c, Environment e) throws 
 		Exception{
-			Logger.info("Method App#run() called");
+            LOGGER.info("Method App#run() called");
 			System.out.println("Hello World: brought to you by Dropwizard!");
 		}
     public static void main( String[] args ) throws Exception {
