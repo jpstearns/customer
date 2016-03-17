@@ -1,4 +1,5 @@
 package com.kindinc.customers;
+import com.kindinc.customers.resources.CustomerResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.dropwizard.Application;
@@ -6,21 +7,16 @@ import io.dropwizard.Configuration;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
-
-/**
- * Hello world!
- *
- */
-public class App extends Application<Configuration> {
+public class App extends Application<CustomerConfiguration> {
 	private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
 
 	@Override
-	public void initialize(Bootstrap<Configuration> b){}
+	public void initialize(Bootstrap<CustomerConfiguration> b){}
+	
 	@Override
-	public void run (Configuration c, Environment e) throws 
+	public void run(CustomerConfiguration c, Environment e) throws 
 		Exception{
-			Logger.info("Method App#run() called");
-			System.out.println("Hello World: brought to you by Dropwizard!");
+          e.jersey().register(new CustomerResource());
 		}
     public static void main( String[] args ) throws Exception {
         new App().run(args);
