@@ -1,1 +1,4 @@
+com/kindinc/customers/representations/Customer.class
+com/kindinc/customers/CustomerConfiguration.class
 com/kindinc/customers/App.class
+com/kindinc/customers/resources/CustomerResource.class
